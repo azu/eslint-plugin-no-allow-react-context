@@ -10,7 +10,7 @@
     "bin/"
   ],
   "name": "eslint-plugin-no-allow-react-context",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Not allow to use React context in specific directory.",
   "main": "lib/index.js",
   "scripts": {
