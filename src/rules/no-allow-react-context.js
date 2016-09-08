@@ -17,7 +17,9 @@ module.exports = function(context) {
     }
     // if match except pattern, then ignore this file
     if (options && filePath && Array.isArray(options.except)) {
-        const isIgnoredFile = minimatchAll(filePath, options.except);
+        const isIgnoredFile = minimatchAll(filePath, options.except, {
+            dot: true
+        });
         if (isIgnoredFile) {
             return {};
         }
