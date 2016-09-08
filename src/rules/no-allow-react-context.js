@@ -1,6 +1,6 @@
 // LICENSE : MIT
 "use strict";
-const minimatchAll = require('minimatch-all');
+const minimatch = require('minimatch');
 const isReactContextClassProperty = (node) => {
     return node.type === "ClassProperty" &&
         node.static === true &&
@@ -17,8 +17,10 @@ module.exports = function(context) {
     }
     // if match except pattern, then ignore this file
     if (options && filePath && Array.isArray(options.except)) {
-        const isIgnoredFile = minimatchAll(filePath, options.except, {
-            dot: true
+        const isIgnoredFile = options.except.some(except => {
+            return minimatch(filePath, except, {
+                dot: true
+            })
         });
         if (isIgnoredFile) {
             return {};

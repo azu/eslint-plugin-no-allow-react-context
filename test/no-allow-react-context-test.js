@@ -26,6 +26,25 @@ tester.run("no-allow-react-context", rule, {
                 }
             ]
         },
+        {
+            code: `class A{ get contextTypes(){} }`,
+            filename: __dirname + "/test.js",
+            options: [
+                {
+                    except: ["**/**/test.js", "**/**/other.js"]
+                }
+            ]
+        },
+        // TODO: fix me
+        {
+            code: `class A{ get contextTypes(){} }`,
+            filename: __dirname + "test/test.js",
+            options: [
+                {
+                    except: ["**/**/test.js", "**/**/other.js", "!test/**"]
+                }
+            ]
+        }
     ],
     invalid: [
         {
