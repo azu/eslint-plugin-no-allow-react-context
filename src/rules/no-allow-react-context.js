@@ -15,9 +15,9 @@ module.exports = function(context) {
     if (typeof options === "object" && filePath === "<input>") {
         return {}
     }
-    // if match expect pattern, then ignore this file
-    if (options && filePath && Array.isArray(options.expect)) {
-        const isIgnoredFile = minimatchAll(filePath, options.expect);
+    // if match except pattern, then ignore this file
+    if (options && filePath && Array.isArray(options.except)) {
+        const isIgnoredFile = minimatchAll(filePath, options.except);
         if (isIgnoredFile) {
             return {};
         }
@@ -36,7 +36,7 @@ module.exports.schema = [
     {
         type: "object",
         properties: {
-            expect: {
+            except: {
                 type: "array"
             },
         },

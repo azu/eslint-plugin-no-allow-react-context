@@ -22,7 +22,7 @@ tester.run("no-allow-react-context", rule, {
             filename: __dirname + "/test.js",
             options: [
                 {
-                    expect: ["**/**/test.js"]
+                    except: ["**/**/test.js"]
                 }
             ]
         },
@@ -38,7 +38,7 @@ tester.run("no-allow-react-context", rule, {
             filename: __dirname + "/wrong.js",
             options: [
                 {
-                    expect: ["**/**/test.js"]
+                    except: ["**/**/test.js"]
                 }
             ]
         }

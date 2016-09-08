@@ -32,13 +32,13 @@ Add eslint-plugin-no-allow-react-context to `.eslintrc`
   ],
   "rules": {
     "no-allow-react-context/no-allow-react-context": [2, {
-         "expect": ["expect/dir/pattern/**/*.js"]
+         "except": ["expect/dir/pattern/**/*.js"]
      }]
   }
 }
 ```
 
-- `expect`: `string[]`
+- `except`: `string[]`
     - expect glob pattern
     - If the pattern match the file name, the file should be ignored.
 
