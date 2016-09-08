@@ -12,7 +12,7 @@
   "name": "eslint-plugin-no-allow-react-context",
   "version": "1.0.0",
   "description": "Not allow to use React context in specific directory.",
-  "main": "lib/eslint-plugin-no-allow-react-context.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "mocha test/",
     "build": "NODE_ENV=production babel src --out-dir lib --source-maps",
